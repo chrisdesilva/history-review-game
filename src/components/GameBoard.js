@@ -1,50 +1,44 @@
 import React, { Component } from 'react'
+import BeginnerQuestions from './BeginnerQuestions'
+import IntermediateQuestions from './IntermediateQuestions'
+import AdvancedQuestions from './AdvancedQuestions'
+import FinalQuestion from './FinalQuestion'
 
 class GameBoard extends Component {
+    
     render() {
         return (
-            <div className="container mt-5">
+            <div className="container pt-5">
             <div className="row text-center">
               <div className="col-sm border p-4">Progressive Leaders</div>
               <div className="col-sm border p-4">Women's Rights</div>
               <div className="col-sm border p-4">Worker's Rights</div>
               <div className="col-sm border p-4">Political Reform</div>
-              <div className="col-sm border p-4">Civil Rights</div>
+              <div className="col-sm border p-4">Amendments</div>
             </div>
             <div className="row text-center">
-              <div className="col-sm border border-danger p-4">100</div>
-              <div className="col-sm border border-danger p-4">100</div>
-              <div className="col-sm border border-danger p-4">100</div>
-              <div className="col-sm border border-danger p-4">100</div>
-              <div className="col-sm border border-danger p-4">100</div>
+              <div className="col-sm p-4"><BeginnerQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><BeginnerQuestions body={"How did Alice Paul help improve life for women?"} /></div>
+              <div className="col-sm p-4"><BeginnerQuestions body={"What group of people was helped from the March of the Mill People?"} /></div>
+              <div className="col-sm p-4"><BeginnerQuestions body={"In which state did Robert La Follette become governor to start his political reforms?"} /></div>
+              <div className="col-sm p-4"><BeginnerQuestions body={"The 18th Amendment was passed based on public support for prohibition. What became illegal after the amendment was passed?"} /></div>
             </div>
             <div className="row text-center">
-              <div className="col-sm border border-danger p-4">200</div>
-              <div className="col-sm border border-danger p-4">200</div>
-              <div className="col-sm border border-danger p-4">200</div>
-              <div className="col-sm border border-danger p-4">200</div>
-              <div className="col-sm border border-danger p-4">200</div>
+              <div className="col-sm p-4"><IntermediateQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><IntermediateQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><IntermediateQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><IntermediateQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><IntermediateQuestions body={"Who could be directly elected after the 17th Amendment was passed?"} /></div>
             </div>
             <div className="row text-center">
-              <div className="col-sm border border-danger p-4">300</div>
-              <div className="col-sm border border-danger p-4">300</div>
-              <div className="col-sm border border-danger p-4">300</div>
-              <div className="col-sm border border-danger p-4">300</div>
-              <div className="col-sm border border-danger p-4">300</div>
+              <div className="col-sm p-4"><AdvancedQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><AdvancedQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><AdvancedQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><AdvancedQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
+              <div className="col-sm p-4"><AdvancedQuestions body={"Which president helped preserve more than 200 million acres of land?"} /></div>
             </div>
             <div className="row text-center">
-              <div className="col-sm border border-danger p-4">400</div>
-              <div className="col-sm border border-danger p-4">400</div>
-              <div className="col-sm border border-danger p-4">400</div>
-              <div className="col-sm border border-danger p-4">400</div>
-              <div className="col-sm border border-danger p-4">400</div>
-            </div>
-            <div className="row text-center">
-              <div className="col-sm border border-danger p-4">500</div>
-              <div className="col-sm border border-danger p-4">500</div>
-              <div className="col-sm border border-danger p-4">500</div>
-              <div className="col-sm border border-danger p-4">500</div>
-              <div className="col-sm border border-danger p-4">500</div>
+                <div className="col-sm p-4"><FinalQuestion body={"What was the nickname given to the group of women that fought for the right to vote?"} /></div>
             </div>
           </div>
         )
