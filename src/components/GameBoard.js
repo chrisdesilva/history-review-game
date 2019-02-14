@@ -9,6 +9,7 @@ class GameBoard extends Component {
     render() {
         return (
             <div className="container pt-5">
+            <h1 className="text-center mb-5">History Heroes</h1>
             <div className="row text-center">
               <div className="col-sm border p-4">Progressive Leaders</div>
               <div className="col-sm border p-4">Women's Rights</div>
