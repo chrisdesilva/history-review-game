@@ -9,24 +9,34 @@ class BeginnerQuestions extends Component {
     
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleClearQuestion = this.handleClearQuestion.bind(this)
     
         this.state = {
           show: false,
+          hidden: false
         };
       }
     
+      //close question modal
       handleClose() {
         this.setState({ show: false });
       }
     
+      //open question modal
       handleShow() {
+        this.handleClearQuestion()
         this.setState({ show: true });
+      }
+
+      //hide button after it's been clicked to clear it from game board
+      handleClearQuestion() {
+        this.setState({ hidden: true })
       }
     
     render() {
         return (
             <div>
-                <Button variant="outline-primary" onClick={this.handleShow}>
+                <Button variant="outline-primary" id={this.state.hidden ? "hidden" : "inline"} onClick={this.handleShow}>
                 Beginner
                 </Button>
                 

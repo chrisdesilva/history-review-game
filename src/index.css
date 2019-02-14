@@ -17,3 +17,11 @@ code {
   background-color: black;
   color: white;
 }
+
+#block {
+  display: block
+}
+
+#hidden {
+  display: none;
+}
