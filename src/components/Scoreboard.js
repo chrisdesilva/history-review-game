@@ -13,6 +13,7 @@ class Scoreboard extends Component {
         team4Name: "Team 4"
     }
 
+    //add 1 points to a given team
     handleAddPointsTeamOne = () => {
         this.setState({
             team1: this.state.team1 + 1
@@ -33,6 +34,8 @@ class Scoreboard extends Component {
             team4: this.state.team4 + 1
         })
     }
+
+    //remove 1 point from a given team
     handleSubtractPointsTeamOne = () => {
         this.setState({
             team1: this.state.team1 - 1
@@ -54,6 +57,7 @@ class Scoreboard extends Component {
         })
     }
 
+    //take input from form to change team names
     handleTeamOneNameChange = (e) => {
         this.setState({
             team1Name: e.target.value

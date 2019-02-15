@@ -3,26 +3,42 @@ import { Button, Modal } from "react-bootstrap"
 
 
 class FinalQuestion extends Component {
+  constructor(props, context) {
+    super(props, context);
 
-    constructor(props, context) {
-        super(props, context);
-    
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-    
-        this.state = {
-          show: false,
-        };
-      }
-    
-      handleClose() {
-        this.setState({ show: false });
-      }
-    
-      handleShow() {
-        this.setState({ show: true });
-      }
-    
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleClearQuestion = this.handleClearQuestion.bind(this)
+    this.handleShowAnswer = this.handleShowAnswer.bind(this);;
+
+    this.state = {
+      show: false,
+      hidden: false,
+      answer: false
+    };
+  }
+
+  //close question modal
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  //open question modal
+  handleShow() {
+    this.handleClearQuestion()
+    this.setState({ show: true });
+  }
+
+  //hide button after it's been clicked to clear it from game board
+  handleClearQuestion() {
+    this.setState({ hidden: true })
+  }
+
+  handleShowAnswer() {
+    this.setState({ answer: true })
+  }
+  
+
     render() {
         return (
             <div>
@@ -34,7 +50,13 @@ class FinalQuestion extends Component {
                 <Modal.Header closeButton>
                     <Modal.Title>Final</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{this.props.body}</Modal.Body>
+                <Modal.Body>
+                  {this.props.body}
+                  <p id={this.state.answer ? "inline" : "hidden"}>{this.props.answer}</p>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={this.handleShowAnswer}>Answer</Button>
+                </Modal.Footer>
                 </Modal>
             </div>
         )

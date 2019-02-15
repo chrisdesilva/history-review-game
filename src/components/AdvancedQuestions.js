@@ -9,10 +9,12 @@ class AdvancedQuestions extends Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleClearQuestion = this.handleClearQuestion.bind(this)
+    this.handleShowAnswer = this.handleShowAnswer.bind(this);;
 
     this.state = {
       show: false,
-      hidden: false
+      hidden: false,
+      answer: false
     };
   }
 
@@ -31,6 +33,11 @@ class AdvancedQuestions extends Component {
   handleClearQuestion() {
     this.setState({ hidden: true })
   }
+
+  handleShowAnswer() {
+    this.setState({ answer: true })
+  }
+  
     
     render() {
         return (
@@ -43,7 +50,13 @@ class AdvancedQuestions extends Component {
                 <Modal.Header closeButton>
                     <Modal.Title>Advanced</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{this.props.body}</Modal.Body>
+                <Modal.Body>
+                  {this.props.body}
+                  <p id={this.state.answer ? "inline" : "hidden"}>{this.props.answer}</p>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={this.handleShowAnswer}>Answer</Button>
+                </Modal.Footer>
                 </Modal>
             </div>
         )
