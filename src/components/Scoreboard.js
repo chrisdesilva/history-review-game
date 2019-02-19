@@ -7,10 +7,12 @@ class Scoreboard extends Component {
         team2: 0,
         team3: 0,
         team4: 0,
+        team5: 0,
         team1Name: "Team 1",
         team2Name: "Team 2",
         team3Name: "Team 3",
-        team4Name: "Team 4"
+        team4Name: "Team 4",
+        team5Name: "Team 5"
     }
 
     //add 1 points to a given team
@@ -32,6 +34,11 @@ class Scoreboard extends Component {
     handleAddPointsTeamFour = () => {
         this.setState({
             team4: this.state.team4 + 1
+        })
+    }
+    handleAddPointsTeamFive = () => {
+        this.setState({
+            team5: this.state.team5 + 1
         })
     }
 
@@ -56,6 +63,11 @@ class Scoreboard extends Component {
             team4: this.state.team4 - 1
         })
     }
+    handleSubtractPointsTeamFive = () => {
+        this.setState({
+            team5: this.state.team5 - 1
+        })
+    }
 
     //take input from form to change team names
     handleTeamOneNameChange = (e) => {
@@ -76,6 +88,11 @@ class Scoreboard extends Component {
     handleTeamFourNameChange = (e) => {
         this.setState({
             team4Name: e.target.value
+        })
+    }
+    handleTeamFiveNameChange = (e) => {
+        this.setState({
+            team5Name: e.target.value
         })
     }
     
@@ -155,6 +172,25 @@ class Scoreboard extends Component {
                             <Form>
                                 <Form.Group controlId="formBasicTeamName">
                                     <Form.Control value={this.state.team4Name} onChange={this.handleTeamFourNameChange} type="text" placeholder="Enter Team Name" />
+                                </Form.Group>
+                            </Form>
+                        </div>
+                    </div>
+                    <div className="col-sm m-auto">
+                        <div className="row justify-content-center">{this.state.team5Name}:</div>
+                        <div className="row justify-content-center"> {this.state.team5}</div>
+                        <div className="row justify-content-center mt-3">
+                            <ButtonGroup vertical>
+                                <button onClick={this.handleAddPointsTeamFour} className="btn btn-outline-success mb-2">
+                                    Add Points
+                                </button>
+                                <button onClick={this.handleSubtractPointsTeamFour} className="btn btn-outline-danger mb-2">
+                                    Subtract Points
+                                </button>
+                            </ButtonGroup>
+                            <Form>
+                                <Form.Group controlId="formBasicTeamName">
+                                    <Form.Control value={this.state.team5Name} onChange={this.handleTeamFiveNameChange} type="text" placeholder="Enter Team Name" />
                                 </Form.Group>
                             </Form>
                         </div>
