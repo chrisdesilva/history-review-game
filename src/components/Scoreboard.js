@@ -181,10 +181,10 @@ class Scoreboard extends Component {
                         <div className="row justify-content-center"> {this.state.team5}</div>
                         <div className="row justify-content-center mt-3">
                             <ButtonGroup vertical>
-                                <button onClick={this.handleAddPointsTeamFour} className="btn btn-outline-success mb-2">
+                                <button onClick={this.handleAddPointsTeamFive} className="btn btn-outline-success mb-2">
                                     Add Points
                                 </button>
-                                <button onClick={this.handleSubtractPointsTeamFour} className="btn btn-outline-danger mb-2">
+                                <button onClick={this.handleSubtractPointsTeamFive} className="btn btn-outline-danger mb-2">
                                     Subtract Points
                                 </button>
                             </ButtonGroup>
