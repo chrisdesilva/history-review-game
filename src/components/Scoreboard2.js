@@ -2,23 +2,25 @@ import React, { Component } from 'react'
 import { Form } from 'react-bootstrap'
 import Team from './Team'
 
+
+
 class Scoreboard2 extends Component {
 
     state = {
         newTeam: "",
-        teams: [
-            {
-                name: "",
-                score: 0
-            }
-        ]
+        teams: []
     }
 
-    handleAddTeam = () => {
+
+    handleAddTeam = (e) => {
+        e.preventDefault()
         const newTeam = this.state.newTeam
-        this.setState({
-            teams: this.state.teams.concat({newTeam, score: 0})
-        })
+        this.setState(
+          { 
+            newTeam: "",
+            teams: [...this.state.teams, {name: newTeam, score: 0}],
+          }
+        )
     }
 
     onTeamNameChange = (e) => {
@@ -28,31 +30,49 @@ class Scoreboard2 extends Component {
         })
     }
 
+    handleAddPoints = () => {
+      this.setState({
+        score: this.state.teams.score + 1
+      })
+    }
+
 
 
     render() {
         return (
             <div>
-                <Form>
-                    <Form.Group>
-                        <Form.Control onChange={this.onTeamNameChange} type="text" placeholder="Enter team name" />
+              <div className="col-sm m-auto">
+                <div className="row justify-content-center">
+                  <Form className="m-auto">
+                    <Form.Group control="formBasicAddTeam">
+                        <Form.Control value={this.state.newTeam} onChange={this.onTeamNameChange} type="text" placeholder="Enter team name" />
                     </Form.Group>
+                  <div className="row justify-content-center">
                     <button onClick={this.handleAddTeam} className="btn btn-outline-success">
                         Add Team
                     </button>
-                </Form>
-                {this.state.teams.map( (team, index) => {
-                    return <Team
-                                teamName={team.teamName[index]}
-                                points={team.points[index]}
+                  </div>
+                  </Form>
+                </div>
+              </div>
+                  <div className="row mt-5">
+                {this.state.teams.map( (team) => {
+                    return <div className="col-sm m-auto">
+                            <Team
+                                teamName={team.name}
+                                points={team.score}
                                 add={this.handleAddPoints}
                                 subtract={this.handleSubtractPoints}
                                 change={this.onTeamNameChange}
                             />
+                            </div>
                 })}
-            </div>
+                    
+                  </div>
+                </div>
         )
     }
 }
+
 
 export default Scoreboard2
