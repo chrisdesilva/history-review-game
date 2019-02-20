@@ -18,7 +18,13 @@ class Scoreboard2 extends Component {
         this.setState(
           { 
             newTeam: "",
-            teams: [...this.state.teams, {name: newTeam, score: 0}],
+            teams: 
+            [...this.state.teams, 
+              {
+                name: newTeam,
+                score: 0
+              }
+            ],
           }
         )
     }
@@ -60,9 +66,6 @@ class Scoreboard2 extends Component {
                     return <div className="col-sm m-auto">
                             <Team
                                 teamName={team.name}
-                                points={team.score}
-                                add={this.handleAddPoints}
-                                subtract={this.handleSubtractPoints}
                                 change={this.onTeamNameChange}
                             />
                             </div>
