@@ -5,6 +5,7 @@ const Team = (props) => {
 
 const [score, setScore] = useState(0)
 
+
 return (
   <div>
     <div className="row justify-content-center">{props.teamName}:</div>
