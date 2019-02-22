@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form } from 'react-bootstrap'
+import { Form, ButtonGroup } from 'react-bootstrap'
 import Team from './Team'
 
 
@@ -29,6 +29,12 @@ class Scoreboard extends Component {
         )
     }
 
+    handleRemoveTeam = (index) => {
+      const teams = this.state.teams
+      teams.splice(index, 1)
+      this.setState({ teams })
+    }
+
     onTeamNameChange = (e) => {
         e.preventDefault()
         this.setState({
@@ -46,9 +52,14 @@ class Scoreboard extends Component {
                         <Form.Control value={this.state.newTeam} onChange={this.onTeamNameChange} type="text" placeholder="Enter team name" />
                     </Form.Group>
                   <div className="row justify-content-center">
-                    <button onClick={this.handleAddTeam} className="btn btn-outline-success">
-                        Add Team
+                  <ButtonGroup vertical>
+                    <button onClick={this.handleAddTeam} className="btn btn-outline-success mb-2">
+                    Add Team
                     </button>
+                    <button onClick={this.handleRemoveTeam} className="btn btn-outline-warning">
+                      Reset Teams
+                    </button>
+                  </ButtonGroup>
                   </div>
                   </Form>
                 </div>
@@ -59,6 +70,7 @@ class Scoreboard extends Component {
                             <Team
                                 teamName={team.name}
                                 change={this.onTeamNameChange}
+                                remove={this.handleRemoveTeam}
                             />
                             </div>
                 })}
