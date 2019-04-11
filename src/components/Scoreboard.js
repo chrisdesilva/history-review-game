@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { Form, ButtonGroup } from 'react-bootstrap'
+import { setTypingValue } from '../actions'
+import store from '../store'
 import Team from './Team'
 
 
 
-class Scoreboard extends Component {
+const Scoreboard = () => {
 
+  const state = store.getState()
     state = {
         newTeam: "",
         teams: []
@@ -36,13 +39,9 @@ class Scoreboard extends Component {
     }
 
     onTeamNameChange = (e) => {
-        e.preventDefault()
-        this.setState({
-            newTeam: e.target.value
-        })
+      store.dispatch(setTypingValue(e.target.value))
     }
     
-    render() {
         return (
             <div>
               <div className="col-sm m-auto">
@@ -79,7 +78,6 @@ class Scoreboard extends Component {
                 </div>
         )
     }
-}
 
 
 export default Scoreboard
