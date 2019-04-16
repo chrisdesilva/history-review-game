@@ -1,62 +1,47 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Form, ButtonGroup } from 'react-bootstrap'
 import Team from './Team'
 
 
 
-class Scoreboard extends Component {
+const Scoreboard = () => {
 
-    state = {
-        newTeam: "",
-        teams: []
-    }
+    const [newTeam, setNewTeam] = useState("")
+    const [teams, setTeams] = useState([])
 
-
-    handleAddTeam = (e) => {
+    const handleAddTeam = e => {
         e.preventDefault()
-        const newTeam = this.state.newTeam
-        this.setState(
-          { 
-            newTeam: "",
-            teams: 
-            [...this.state.teams, 
-              {
-                name: newTeam,
-                score: 0
-              }
-            ],
-          }
-        )
+        setNewTeam("")
+        setTeams([...teams, {
+          name: newTeam,
+          score: 0
+        }])
     }
 
-    handleRemoveTeam = (index) => {
-      const teams = this.state.teams
+    const handleRemoveTeam = index => {
       teams.splice(index, 1)
-      this.setState({ teams })
+      setTeams( teams )
     }
 
-    onTeamNameChange = (e) => {
+    const onTeamNameChange = e => {
         e.preventDefault()
-        this.setState({
-            newTeam: e.target.value
-        })
+        setNewTeam(e.target.value)
     }
     
-    render() {
         return (
             <div>
               <div className="col-sm m-auto">
                 <div className="row justify-content-center">
                   <Form className="m-auto">
                     <Form.Group control="formBasicAddTeam">
-                        <Form.Control value={this.state.newTeam} onChange={this.onTeamNameChange} type="text" placeholder="Enter team name" />
+                        <Form.Control value={newTeam} onChange={onTeamNameChange} type="text" placeholder="Enter team name" />
                     </Form.Group>
                   <div className="row justify-content-center">
                   <ButtonGroup vertical>
-                    <button onClick={this.handleAddTeam} className="btn btn-outline-success mb-2">
+                    <button onClick={handleAddTeam} className="btn btn-outline-success mb-2">
                     Add Team
                     </button>
-                    <button onClick={this.handleRemoveTeam} className="btn btn-outline-warning">
+                    <button onClick={handleRemoveTeam} className="btn btn-outline-warning">
                       Reset Teams
                     </button>
                   </ButtonGroup>
@@ -65,12 +50,12 @@ class Scoreboard extends Component {
                 </div>
               </div>
                   <div className="row mt-5">
-                {this.state.teams.map( (team) => {
+                {teams.map( team => {
                     return <div className="col-sm m-auto">
                             <Team
                                 teamName={team.name}
-                                change={this.onTeamNameChange}
-                                remove={this.handleRemoveTeam}
+                                change={onTeamNameChange}
+                                remove={handleRemoveTeam}
                             />
                             </div>
                 })}
@@ -79,7 +64,6 @@ class Scoreboard extends Component {
                 </div>
         )
     }
-}
 
 
 export default Scoreboard
