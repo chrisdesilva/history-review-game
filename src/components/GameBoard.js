@@ -1,13 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import BeginnerQuestions from './BeginnerQuestions'
 import IntermediateQuestions from './IntermediateQuestions'
 import AdvancedQuestions from './AdvancedQuestions'
 import FinalQuestion from './FinalQuestion'
 
-class GameBoard extends Component {
-    
-    render() {
-        return (
+const GameBoard = () => (
             <div className="container pt-5">
             <h1 className="text-center mb-5">History Heroes</h1>
             <div className="row text-center">
@@ -42,8 +39,7 @@ class GameBoard extends Component {
                 <div className="col-sm p-4"><FinalQuestion body={"What government agency was created to save failing banks and businesses?"} answer={"Reconstruction Finance Corporation (RFC)"} /></div>
             </div>
           </div>
-        )
-    }
-}
+  )
+
 
 export default GameBoard
