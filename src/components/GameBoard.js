@@ -24,7 +24,7 @@ const GameBoard = () => (
             <div className="row text-center">
               <div className="col-sm p-4"><IntermediateQuestions body={"What was the nickname given to the temporary towns built during the Great Depression?"} answer={"Hoovervilles"} /></div>
               <div className="col-sm p-4"><IntermediateQuestions body={"What event triggered the start of the Great Depression?"} answer={"Stock market crash"} /></div>
-              <div className="col-sm p-4"><IntermediateQuestions body={"What group of people was hit hardest by the Dust Bowl"} answer={"Farmers"} /></div>
+              <div className="col-sm p-4"><IntermediateQuestions body={"What group of people was hit hardest by the Dust Bowl?"} answer={"Farmers"} /></div>
               <div className="col-sm p-4"><IntermediateQuestions body={"Who was president at the start of the Great Depression?"} answer={"Herbert Hoover"} /></div>
               <div className="col-sm p-4"><IntermediateQuestions body={"Which company became successful after starting a mail-order system for consumer goods?"} answer={"Sears"} /></div>
             </div>
