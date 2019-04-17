@@ -1,16 +1,11 @@
 import React from 'react'
 import Questions from './Questions'
+import Categories from './Categories'
 
 const GameBoard = () => (
             <div className="container pt-5">
               <h1 className="text-center mb-5">History Heroes</h1>
-              <div className="row text-center">
-                <div className="col-sm border p-4">G</div>
-                <div className="col-sm border p-4">R</div>
-                <div className="col-sm border p-4">E</div>
-                <div className="col-sm border p-4">A</div>
-                <div className="col-sm border p-4">T</div>
-              </div>
+              <Categories />
               <div className="row text-center">
                 <div className="col-sm p-4"><Questions body={"What group of Americans gained the right to vote from the Nineteenth Amendment?"} answer={"Women"} variant={"outline-primary"} level={"Beginner"}/></div>
                 <div className="col-sm p-4"><Questions body={"What idea by Henry Ford made car manufacturing much more efficient?"} answer={"Assembly Line"} variant={"outline-primary"} level={"Beginner"}/></div>
