@@ -32,11 +32,11 @@ const GameBoard = () => (
               <div className="col-sm p-4"><AdvancedQuestions body={"What was the main goal of the Social Security Act?"} answer={"To help elderly people"} /></div>
               <div className="col-sm p-4"><AdvancedQuestions body={"What event led to the Red Scare?"} answer={"Communist Revolution in Russia"} /></div>
               <div className="col-sm p-4"><AdvancedQuestions body={"What was the name given to clubs that served alcohol illegally?"} answer={"Speakeasies"} /></div>
-              <div className="col-sm p-4"><AdvancedQuestions body={"The Immigration Act of 1924 banned people all immigration from where?"} answer={"Asia"} /></div>
+              <div className="col-sm p-4"><AdvancedQuestions body={"The Immigration Act of 1924 banned all immigration from where?"} answer={"Asia"} /></div>
               <div className="col-sm p-4"><AdvancedQuestions body={"John Scopes was arrested for teaching what in school?"} answer={"Evolution"} /></div>
             </div>
             <div className="row text-center">
-                <div className="col-sm p-4"><FinalQuestion body={"What government agency was created to save failing banks and businesses?"} answer={"Reconstruction Finance Corporation (RFC)"} /></div>
+                <div className="col-sm p-4"><FinalQuestion body={"What government agency was created by Herbert Hoover to save failing banks and businesses?"} answer={"Reconstruction Finance Corporation (RFC)"} /></div>
             </div>
           </div>
   )
