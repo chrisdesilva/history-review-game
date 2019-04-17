@@ -16,6 +16,8 @@ code {
 .App {
   background-color: black;
   color: white;
+  height: 100vh;
+  margin: .5rem;
 }
 
 #block {
