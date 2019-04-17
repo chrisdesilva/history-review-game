@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Button, Modal } from "react-bootstrap"
 
-
-const FinalQuestion = props => {
-  const [show, setShow] = useState(false)
-  const [answer, setAnswer] = useState(false)
+const Questions = props => {
+    const [show, setShow] = useState(false)
+    const [hidden, setHidden] = useState(false)
+    const [answer, setAnswer] = useState(false)
 
   //close question modal
   const handleClose = () => {
@@ -13,20 +13,28 @@ const FinalQuestion = props => {
 
   //open question modal
   const handleShow = () => {
+    handleClearQuestion();
     setShow(true);
+  }
+
+  //hide button after it's been clicked to clear it from game board
+  const handleClearQuestion = () => {
+    setHidden(true);
   }
 
   const handleShowAnswer = () => {
     setAnswer(true)
   }
+  
         return (
             <div>
-                <Button variant="danger" onClick={handleShow} block>
-                Final
+                <Button variant={props.variant} id={hidden ? "hidden" : "inline"} onClick={handleShow}>
+                {props.level}
                 </Button>
+                
                 <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Final</Modal.Title>
+                    <Modal.Title>{props.level}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                   {props.body}
@@ -40,5 +48,4 @@ const FinalQuestion = props => {
         )
     }
 
-
-export default FinalQuestion
+export default Questions
