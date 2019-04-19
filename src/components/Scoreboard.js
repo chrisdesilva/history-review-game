@@ -39,7 +39,7 @@ const Scoreboard = () => {
                   <div className="row justify-content-center">
                   <ButtonGroup vertical>
                     <button onClick={handleAddTeam} className="btn btn-outline-success mb-2">
-                    Add Team
+                      Add Team
                     </button>
                     <button onClick={handleRemoveTeam} className="btn btn-outline-warning">
                       Reset Teams
