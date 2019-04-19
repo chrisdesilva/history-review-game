@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form } from 'react-bootstrap'
+import { Col, Form } from 'react-bootstrap'
 
 const Categories = () => {
 
@@ -20,13 +20,19 @@ const Categories = () => {
     return (
         <div>
             {topics.length === 5 ? null: 
-                <Form className="m-auto">
-                    <Form.Group control="formBasicAddTopic">
+                <Form className="m-auto text-right justify-end">
+                  <Form.Group control="formBasicAddTopic">
+                    <Form.Row>
+                      <Col>
                         <Form.Control value={newTopic} onChange={onTopicChange} type="text" placeholder="Enter Five Categories" />
+                      </Col>
+                      <Col>
                         <button onClick={handleAddTopic} className="btn btn-outline-success mb-2">
-                            Add 
+                            Add Category
                         </button>
-                    </Form.Group>
+                      </Col>
+                    </Form.Row>
+                  </Form.Group>
                 </Form>} 
             <div className="row text-center">
                 <div className="col-sm border p-4">{topics[0]}</div>
