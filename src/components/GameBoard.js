@@ -3,17 +3,6 @@ import { Col, Form } from 'react-bootstrap'
 import Questions from './Questions'
 import Categories from './Categories'
 
-const options = [{
-  value: 'Beginner',
-  label: 'Beginner'
-}, {
-  value: 'Intermediate',
-  label: 'Intermediate'
-}, {
-  value: 'Advanced',
-  label: 'Advanced'
-}];
-
 const GameBoard = () => {
 
   const [question, setQuestion] = useState('')
@@ -53,16 +42,15 @@ const GameBoard = () => {
     }])
     setQuestion('')
     setAnswer('')
-    setLevel('Beginner')
-    setVariant('outline-primary')
   }
 
 
          return (
             <div className="container pt-5">
               <h1 className="text-center mb-5">History Heroes</h1>
-              <Categories />
-              <Form className="mt-5">
+              <Categories/>
+              {questionList.length < 15 && <p className="mt-5">Please enter 5 beginner, 5 intermediate, and 5 advanced questions</p>}
+              {questionList.length < 15 && <Form className="mt-5">
                 <Form.Row control="formBasicAddQuestion">
                     <Col>
                       <Form.Control value={question} onChange={onQuestionChange} type="text" placeholder="Enter new question" />
@@ -82,6 +70,7 @@ const GameBoard = () => {
                     </button>
                 </Form.Row>
               </Form>
+              }
               <div className="row text-center">
                 {questionList.map( question => {
                   return question.level === "Beginner" ? <div className="col-sm p-4">
