@@ -1,4 +1,4 @@
-#[History Heroes](https://historyheroes.netlify.com/)
+# [History Heroes](https://historyheroes.netlify.com/)
 
 History Heroes is a React app that allows users to enter questions and answers in a Jeopardy-style format. Designed for teachers to use as a review game, the user can enter 5 categories, each with a beginner, intermediate, and advanced level question. As a History teacher, I named the app History Heroes, but I'm certainly open to any clever cross-curricular name changes.
 
