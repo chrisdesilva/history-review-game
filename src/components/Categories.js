@@ -23,7 +23,7 @@ const Categories = () => {
                 <Form className="m-auto">
                     <Form.Group control="formBasicAddTopic">
                         <Form.Control value={newTopic} onChange={onTopicChange} type="text" placeholder="Enter Five Categories" />
-                        <button onClick={handleAddTopic} className="btn btn-outline-success mb-2">
+                        <button onClick={handleAddTopic} className="btn btn-success mb-2">
                             Add 
                         </button>
                     </Form.Group>
