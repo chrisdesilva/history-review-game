@@ -13,7 +13,6 @@ const Questions = props => {
 
   //open question modal
   const handleShow = () => {
-    handleClearQuestion();
     setShow(true);
   }
 
@@ -38,10 +37,11 @@ const Questions = props => {
                 </Modal.Header>
                 <Modal.Body>
                   {props.body}
-                  <p id={answer ? "inline" : "hidden"}>{props.answer}</p>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button variant="secondary" onClick={handleShowAnswer}>Answer</Button>
+                    <p id={answer ? "inline" : "hidden"}>{props.answer}</p>
+                    <Button variant="secondary" onClick={handleShowAnswer}>Answer</Button>
+                    <Button variant="danger" onClick={handleClearQuestion} id={hidden ? "hidden" : "inline"}>Remove from board</Button>
                 </Modal.Footer>
                 </Modal>
             </div>
