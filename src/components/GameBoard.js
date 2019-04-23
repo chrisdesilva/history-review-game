@@ -29,6 +29,8 @@ const GameBoard = () => {
       setVariant('outline-warning')
     } else if (e.target.value === "Advanced") {
       setVariant('outline-danger')
+    } else if (e.target.value === "Final") {
+      setVariant('danger')
     }
   }
 
@@ -63,6 +65,7 @@ const GameBoard = () => {
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
                         <option value="Advanced">Advanced</option>
+                        <option value="Final">Final</option>
                       </Form.Control>
                     </Col>
                     <button onClick={handleAddQuestion} className="btn btn-outline-success mb-2">
@@ -108,7 +111,16 @@ const GameBoard = () => {
               })}
               </div>
               <div className="row text-center">
-                  <div className="col-sm p-4"><Questions body={"What government agency was created by Herbert Hoover to save failing banks and businesses?"} answer={"Reconstruction Finance Corporation (RFC)"} variant={"danger"} level={"Final"} /></div>
+                {questionList.map( question => {
+                  return question.level === "Final" ? <div className="col-sm p-4">
+                    <Questions 
+                      body={question.body} 
+                      answer={question.answer} 
+                      level={question.level}
+                      variant={question.variant}
+                    />
+                  </div> : null
+                })}
               </div>
             </div>
     )
