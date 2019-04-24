@@ -48,8 +48,7 @@ const Scoreboard = () => {
                   </div>
                   </Form>
                 </div>
-              </div>
-                  <div className="row mt-5">
+                <div className="row mt-5">
                 {teams.map( team => {
                     return <div className="col-sm m-auto">
                             <Team
@@ -61,6 +60,7 @@ const Scoreboard = () => {
                 })}
                     
                   </div>
+              </div>
                 </div>
         )
     }

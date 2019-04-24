@@ -1,0 +1,16 @@
+.App {
+    background: darkgreen;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 120vh;
+  }
+  
+  #block {
+    display: block
+  }
+  
+  #hidden {
+    display: none;
+  }
+  
