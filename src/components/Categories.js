@@ -27,7 +27,7 @@ const Categories = () => {
                         <Form.Control value={newTopic} onChange={onTopicChange} type="text" placeholder="Enter Five Categories" />
                       </Col>
                       <Col>
-                        <button onClick={handleAddTopic} className="btn btn-outline-success mb-2">
+                        <button onClick={handleAddTopic} className="btn btn-success mb-2">
                             Add Category
                         </button>
                       </Col>

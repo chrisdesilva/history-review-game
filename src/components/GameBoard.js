@@ -9,7 +9,7 @@ const GameBoard = () => {
   const [questionList, setQuestionList] = useState([])
   const [answer, setAnswer] = useState([])
   const [level, setLevel] = useState('Beginner')
-  const [variant, setVariant] = useState('outline-primary')
+  const [variant, setVariant] = useState('primary')
 
   const onQuestionChange = e => {
     e.preventDefault()
@@ -24,11 +24,11 @@ const GameBoard = () => {
   const onLevelChange = e => {
     setLevel(e.target.value)
     if(e.target.value === "Beginner") {
-      setVariant('outline-primary')
+      setVariant('primary')
     } else if (e.target.value === "Intermediate") {
-      setVariant('outline-warning')
+      setVariant('warning')
     } else if (e.target.value === "Advanced") {
-      setVariant('outline-danger')
+      setVariant('danger')
     } else if (e.target.value === "Final") {
       setVariant('danger')
     }
@@ -50,9 +50,9 @@ const GameBoard = () => {
          return (
             <div className="container pt-5">
               <h1 className="text-center mb-5">History Heroes</h1>
-              <Categories/>
-              {questionList.length < 15 && <p className="mt-5">Please enter 5 beginner, 5 intermediate, and 5 advanced questions</p>}
-              {questionList.length < 15 && <Form className="mt-5">
+              <Categories />
+              {questionList.length < 15 &&<p>Please enter 5 beginner, 5 intermediate, and 5 advanced questions</p>}
+              <Form className="mt-5">
                 <Form.Row control="formBasicAddQuestion">
                     <Col>
                       <Form.Control value={question} onChange={onQuestionChange} type="text" placeholder="Enter new question" />
@@ -65,62 +65,60 @@ const GameBoard = () => {
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
                         <option value="Advanced">Advanced</option>
-                        <option value="Final">Final</option>
+                        <option value="Advanced">Final</option>
                       </Form.Control>
                     </Col>
-                    <button onClick={handleAddQuestion} className="btn btn-outline-success mb-2">
+                    <button onClick={handleAddQuestion} className="btn btn-success mb-2">
                       Add Question
                     </button>
                 </Form.Row>
               </Form>
-              }
               <div className="row text-center">
                 {questionList.map( question => {
-                  return question.level === "Beginner" ? <div className="col-sm p-4">
+                  return question.level === "Beginner" && <div className="col-sm p-4">
                     <Questions 
                       body={question.body} 
                       answer={question.answer} 
                       level={question.level}
                       variant={question.variant}
                     />
-                  </div> : null
+                  </div> 
                 })}
               </div>
               <div className="row text-center">
               {questionList.map( question => {
-                return question.level === "Intermediate" ? <div className="col-sm p-4">
+                return question.level === "Intermediate" && <div className="col-sm p-4">
                   <Questions 
                     body={question.body} 
                     answer={question.answer} 
                     level={question.level}
                     variant={question.variant}
                   />
-                </div> : null
+                </div> 
               })}
               </div>
               <div className="row text-center">
               {questionList.map( question => {
-                return question.level === "Advanced" ? <div className="col-sm p-4">
+                return question.level === "Advanced" && <div className="col-sm p-4">
                   <Questions 
                     body={question.body} 
                     answer={question.answer} 
                     level={question.level}
                     variant={question.variant}
                   />
-                </div> : null
+                </div> 
               })}
               </div>
               <div className="row text-center">
-                {questionList.map( question => {
-                  return question.level === "Final" ? <div className="col-sm p-4">
+                {question.level === "Final" && 
+                  <div>
                     <Questions 
                       body={question.body} 
                       answer={question.answer} 
                       level={question.level}
                       variant={question.variant}
-                    />
-                  </div> : null
-                })}
+                    />  
+                  </div>}
               </div>
             </div>
     )
