@@ -12,6 +12,9 @@
     "heroku-postbuild":
     "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
+  "engines": {
+    "node": "10.15.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrisdesilva/history-review-game.git"
