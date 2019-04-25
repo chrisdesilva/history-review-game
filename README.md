@@ -18,8 +18,9 @@ I'd LOVE your help on this project! All are welcome to contribute. You can find 
 4. Add an `upstream` remote for keeping your local repo up-to-date:
   > `git remote add upstream git@github.com:chrisdesilva/history-review-game.git`
 5. Run `npm install` to install project dependencies
-6. Run `npm start` to start your dev environment 
-7. Begin making magic
+6. `cd client` and run `npm start` to start your dev environment 
+7. `cd ..` to go back to the root, then `cd server` to go into the server directory. `node server.js` to start the server.
+8. Begin making magic
 
 ## Creating a New Pull Request
 1. Make sure you are on the `master` branch and have pulled the latest changes:
