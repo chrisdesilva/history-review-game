@@ -11,10 +11,10 @@ return (
       <div className="row justify-content-center">{score}</div>
         <div className="row justify-content-center mt-3">
         <ButtonGroup vertical>
-          <button onClick={() => setScore(score + 1)} className="btn btn-outline-success mb-2">
+          <button onClick={() => setScore(score + 1)} className="btn btn-success mb-2">
               Add Points
           </button>
-          <button onClick={() => setScore(score - 1)} className="btn btn-outline-danger mb-2">
+          <button onClick={() => setScore(score - 1)} className="btn btn-danger mb-2">
               Subtract Points
           </button>
       </ButtonGroup>
