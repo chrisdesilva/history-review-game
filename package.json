@@ -4,8 +4,11 @@
   "description": "History Heroes is a React app that allows users to enter questions and answers in a Jeopardy-style format. Designed for teachers to use as a review game, the user can enter 5 categories, each with a beginner, intermediate, and advanced level question. As a History teacher, I named the app History Heroes, but I'm certainly open to any clever cross-curricular name changes.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js && react-scripts start"
+    "client-install": "npm install --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\"", 
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +21,7 @@
   },
   "homepage": "https://github.com/chrisdesilva/history-review-game#readme",
   "dependencies": {
+    "concurrently": "^4.1.0",
     "express": "^4.16.4"
   }
 }
