@@ -17,7 +17,7 @@ I'd LOVE your help on this project! All are welcome to contribute. You can find 
 3. `cd history-review-game` to make sure you are in the right directory
 4. Add an `upstream` remote for keeping your local repo up-to-date:
   > `git remote add upstream git@github.com:chrisdesilva/history-review-game.git`
-5. Run `npm install` to install project dependencies
+5. Run `npm install` to install project dependencies. This needs to be done from both the root directory and the client directory.
 6. `cd client` and run `npm start` to start your dev environment 
 7. `cd ..` to go back to the root, then `cd server` to go into the server directory. `node server.js` to start the server.
 8. Begin making magic
