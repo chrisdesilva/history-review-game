@@ -1,5 +1,7 @@
 # [History Heroes](https://history-review.herokuapp.com/)
 
+**Check out the updated version at [Open Jeopardy](https://github.com/chrisdesilva/open-jeopardy)
+
 History Heroes is a React app that allows users to enter questions and answers in a Jeopardy-style format. Designed for teachers to use as a review game, the user can enter 5 categories, each with a beginner, intermediate, and advanced level question. As a History teacher, I named the app History Heroes, but I'm certainly open to any clever cross-curricular name changes.
 
 # Contribute [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
